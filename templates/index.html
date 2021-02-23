@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+body {
+  background-color: rgb(157, 179, 179);
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: rgb(56, 143, 241);
+    color: #000;
+    border-radius: 5px;
+    width: 65%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: rgb(255, 255, 255);
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(40, 240, 50);
+  }
+  .popup .close:hover {
+    color: #fc1515;
+  }
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  img {
+          width: 100%;
+          height: auto;
+        }
+
+    </style>
+    <title>Vote SA</title>
+  </head>
+  <body class="home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SA's Votes</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">Most recent!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about" >About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#popup1" >Signup/Signin</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    <div class="jumbotron text-center">
+      <h1>South Africa's 1st Voting System!</h1>
+      <p>Resize this responsive page to see the effect!</p>
+      <span>Last updated: 11:52 GMT, 23 February 2021</span>
+    </div>
+    <div class="container">
+
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card" style="width:300px">
+              <img class="card-img-top" src="https://scontent-cpt1-1.xx.fbcdn.net/v/t1.0-9/153114041_10159243863196543_7250188655776183349_n.png?_nc_cat=110&ccb=3&_nc_sid=730e14&_nc_ohc=V953P9ax82UAX_V1k-P&_nc_ht=scontent-cpt1-1.xx&oh=957d035f83badb5f22d4be29ecb47d15&oe=60596FED" alt="Card image" style="width:100%">
+              <div class="card-body">
+                <p>Following Uruguay's decision to legalise marijuana to thwart drug cartels, should the rest of the world follow suit?</p>
+                <a class="btn btn-primary" href="#popup1">VOTE YES!</a>
+                <a href="#popup1" class="btn btn-primary">VOTE NO!</a>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="col-sm-4">
+            <div class="card" style="width:300px">
+              <img class="card-img-top" src="https://scontent-cpt1-1.xx.fbcdn.net/v/t45.1600-4/cp0/q75/spS444/c0.13.651.340a/s526x296/149334472_23846823856120273_2410298572296688578_n.jpg?_nc_cat=106&ccb=3&_nc_sid=67cdda&_nc_ohc=3klOjyYQTI0AX8cRY90&_nc_ht=scontent-cpt1-1.xx&_nc_tp=31&oh=507072cc1b9b74ffc43a038cd3c109f0&oe=6057D0E6" alt="Card image" style="width:100%">
+              <div class="card-body">
+                
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="#popup1" class="btn btn-primary">VOTE YES!</a>
+                <a href="#popup1" class="btn btn-primary">VOTE NO!</a>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="col-sm-4">
+            <div class="card" style="width:300px">
+              <img class="card-img-top" src="https://scontent-cpt1-1.xx.fbcdn.net/v/t1.0-9/150167544_10159226241896543_1732753944014433748_n.jpg?_nc_cat=107&ccb=3&_nc_sid=730e14&_nc_ohc=8bPgFpIJs1sAX8OjNo-&_nc_ht=scontent-cpt1-1.xx&oh=7522df0f3b99eef167a1713436bc8f3e&oe=605790C2" alt="Card image" style="width:100%">
+              <div class="card-body">
+                
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="#popup1" class="btn btn-primary">VOTE YES!</a>
+                <a href="#popup1" class="btn btn-primary">VOTE NO!</a>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="col-sm-4">
+            <div class="card" style="width:300px">
+              <img class="card-img-top" src="https://scontent-cpt1-1.xx.fbcdn.net/v/t1.0-9/149187892_10159218425721543_2867991330313592684_n.png?_nc_cat=106&ccb=3&_nc_sid=730e14&_nc_ohc=B41P3csQBzAAX9Wasxy&_nc_oc=AQm4Hs0OrPu5S6BoxNcxD8PHVSPze-7fLRwJKdO0GBlGU14HvmYtqVBukdB4PV2u9pA&_nc_ht=scontent-cpt1-1.xx&oh=c932730c8ff78011fe6d9c67cce3825e&oe=60575DFB" alt="Card image" style="width:100%">
+              <div class="card-body">
+                
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="#popup1" class="btn btn-primary">VOTE YES!</a>
+                <a href="#popup1" class="btn btn-primary">VOTE NO!</a>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="col-sm-4">
+            <div class="card" style="width:300px">
+              <img class="card-img-top" src="https://scontent-cpt1-1.xx.fbcdn.net/v/t1.0-9/150443156_10159222955711543_7493403596067499917_o.jpg?_nc_cat=109&ccb=3&_nc_sid=730e14&_nc_ohc=An4YIZDrqbIAX96T_FL&_nc_ht=scontent-cpt1-1.xx&oh=d52d8fc30049c0250bebdab4671752db&oe=60590F56" alt="Card image" style="width:100%">
+              <div class="card-body">
+                
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="#popup1" class="btn btn-primary">VOTE YES!</a>
+                <a href="#popup1" class="btn btn-primary">VOTE NO!</a>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="col-sm-4">
+            <div class="card" style="width:300px">
+              <img class="card-img-top" src="https://scontent-cpt1-1.xx.fbcdn.net/v/t1.0-9/147385746_10159205647021543_4181235667722656971_n.jpg?_nc_cat=108&ccb=3&_nc_sid=9267fe&_nc_ohc=Mtb95bTCLd0AX_QYIGH&_nc_ht=scontent-cpt1-1.xx&oh=187dea0ad4e0299ffbe353d4cec42d18&oe=6057D8F1" alt="Card image" style="width:100%">
+              <div class="card-body">
+                
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="#popup1" class="btn btn-primary">VOTE YES!</a>
+                <a href="#popup1" class="btn btn-primary">VOTE NO!</a>
+              </div>
+            </div>
+          </div>
+          <div id="popup1" class="overlay">
+            <div class="popup">
+              <h2>Signup Or Login</h2>
+              <a class="close" href="#here">&times;</a>
+              <div class="content">
+                <ul>
+                  <li> Sign up to our newsletter!</li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>
